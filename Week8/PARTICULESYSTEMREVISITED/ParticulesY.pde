@@ -28,7 +28,7 @@ class Particle {
 
   void update() {
     life--;
-    s = map(life, 60, 0, 40, 0);
+    s = map(life, 60, 0, 50, 0);
     
   
     if (x < 0 || x > width) {
