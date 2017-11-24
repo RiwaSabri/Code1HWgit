@@ -4,6 +4,7 @@ class Rectangle {
   float a;
   float b;
   float c;
+  float m;
   boolean switchState;
   int r;
   float angle;
@@ -16,6 +17,7 @@ Rectangle() {
     a=random(100,800);
     b=random(100,800);
     c=random(255);
+    m=random(100,300);
     r=int(random(5));
     angle=random(360);
     
@@ -43,11 +45,11 @@ if (r==2){
 }
 if(r==3) {
   fill(c,c,60);
-  rect(a,b,600,100);
+  rect(m,b,600,100);
 }
 if (r==4){
   fill(c,c,60);
-  rect(a,b,800,100);
+  rect(m,b,800,100);
 }
 if (r==5){
 }
