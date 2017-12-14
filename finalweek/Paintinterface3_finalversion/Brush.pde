@@ -1,10 +1,11 @@
 class Brush {
   float x;
   float y;
-  int a = 200;
-  int b = 200;
-  int c = 200;
-  int d = 200;
+  int a ;
+  int b ;
+  int c ;
+  int d ;
+  int z;
   int r;
 
   float e;
@@ -20,10 +21,15 @@ class Brush {
 
 
   Brush() {
-    
+
     x=26;
     y=240;
-    r=int(random(3));
+    r=int(random(4));
+    a=200;
+    b=200;
+    c=200;
+    d=200;
+    z=10;
     i=0;
     e=0;
     f=700;
@@ -72,47 +78,45 @@ class Brush {
       popMatrix();
     }
     if (r==2) {
+      if (z<500) {
+        pushMatrix();
+        noStroke();
+        fill(random(200));
+        z=z+1;
+        rect( 700, 200, z, z);
+        popMatrix();
+      } else {
+        z=10;
+      }
+    }
+  
+  if (r==3) {
+    if (z<500) {
       pushMatrix();
-      angle += rate;
-
-      e=width/2+sin(angle)*amplitude;
-      f+=0.08;
-
-
-   
-
-
-      angle = -1;
-      amplitude = width/2+50;
-      rate = 0.009;
-
-
-      stroke(map(e, 0, width, 255, 0));
-      stroke(map(f, 0, height, 255, 0));
-      noFill();
-      translate(e, f);
-
-      i+=5;
-      rotate(radians(i));
-
-      rect(0, 0, 50, 50);
-      popMatrix();
-    }
-  }
-
-  void mouse () {
-    if (mouseX>26 && mouseX<26+30 
-      && mouseY> 240 && mouseY<240+20 ) {
-
-
       noStroke();
-      fill(0, 0, 255);
-      rect(x, y, 30, 20);
-      textSize(15);
-      fill(0);
-      stroke(0);
-      textAlign(CENTER, CENTER);
-      text("brush", mouseX+40, mouseY);
+      fill(random(200));
+      z=z+1;
+      ellipse( 300, 400, z, z);
+      popMatrix();
+    } else {
+      z=10;
     }
   }
+}
+
+void mouse () {
+  if (mouseX>26 && mouseX<26+30 
+    && mouseY> 240 && mouseY<240+20 ) {
+
+
+    noStroke();
+    fill(0, 0, 255);
+    rect(x, y, 30, 20);
+    textSize(15);
+    fill(0);
+    stroke(0);
+    textAlign(CENTER, CENTER);
+    text("brush", mouseX+40, mouseY);
+  }
+}
 }

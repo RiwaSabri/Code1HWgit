@@ -1,6 +1,7 @@
 class Eraser {
   float x;
   float y;
+    PImage img; 
 
   Eraser() {
     x=26;
@@ -14,8 +15,8 @@ class Eraser {
     fill(0);
     rect(x, y, 30, 20);
     
-    ellipseMode(CENTER);
-    ellipse(width/2+50,height/2,500, 500);
+    img = loadImage("cat.jpg");
+       image(img, 700,450, 100, 200);
   }
 
   void mouse () {

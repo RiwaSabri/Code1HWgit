@@ -11,12 +11,12 @@ class Stroke {
   Stroke(int xInput, int yInput) {
     x=30;
     y=160;
-    i=int(random(6));
+    i=int(random(12));
     r=int(random(5));
     a = xInput;
     b = yInput;
     switchState=true;
-    img = loadImage("portrait"+i+".jpg");
+    img = loadImage("stroke"+i+".jpg");
   }
 
   void display () {
@@ -34,24 +34,28 @@ class Stroke {
 
     if (switchState) {
       if (r==0) {
-        fill(0, 255, 0);
+        fill(random(255));
         ellipse(10+a, 10+b, 50, 50);
       }
       if (r==1) {
-        fill(0, 255, 0);
+        fill(random(255));
         rect(10+a, 10+b, 50, 50);
       }
       if (r==2) {
-        fill(0, 255, 0);
-        image(img, 10+a, 10+b, random(50,75), 100);
+        fill(255);
+        image(img, 10+a, 10+b, 70, 70);
       }
       if (r==3) {
-        fill(255, 25, 0);
+        fill(255);
         rect(10+a, 10+b, 50, 50);
       }
-      if (a>500) {
-        fill(10, 255, 100);
+      if (r==4) {
+        fill(0, 20, 100);
         rect(10+a, 10+b, 50, 50);
+      }
+          if (r==5) {
+        fill(0, 255, 0);
+        image(img, 10+a, 10+b, 70, 70);
       }
     }
   }
