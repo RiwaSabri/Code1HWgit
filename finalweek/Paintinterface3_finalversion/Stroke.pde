@@ -43,7 +43,7 @@ class Stroke {
       }
       if (r==2) {
         fill(0, 255, 0);
-        image(img, 10+a, 10+b, random(100), random(100));
+        image(img, 10+a, 10+b, random(50,75), 100);
       }
       if (r==3) {
         fill(255, 25, 0);

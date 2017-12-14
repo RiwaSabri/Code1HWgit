@@ -14,7 +14,7 @@ class Eraser {
     fill(0);
     rect(x, y, 30, 20);
     
-    rectMode(CENTER);
+    ellipseMode(CENTER);
     ellipse(width/2+50,height/2,500, 500);
   }
 
